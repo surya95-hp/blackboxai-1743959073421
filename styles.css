@@ -1,0 +1,26 @@
+/* Dark Mode Classes */
+body.dark {
+  background: #121212;
+  color: #e5e5e5;
+}
+
+/* Video Card Hover Effects */
+.group:hover .absolute {
+  opacity: 1 !important;
+}
+
+/* Profile Dropdown Styling */
+#profile-dropdown {
+  min-width: 200px;
+}
+
+/* Responsive Navigation */
+@media (max-width: 768px) {
+  aside {
+    width: 0;
+    transition: width 0.3s;
+  }
+  aside.active {
+    width: 250px;
+  }
+}
