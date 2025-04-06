@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Replica</title>
+    <link rel="stylesheet" href="https://cdn.tailwindcss.com">
+    <link rel="stylesheet" href="fonts.css">
+    <link rel="icon" href="https://www.youtube.com/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="scripts.js" defer></script>
+</head>
+<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-200">
+
+    <header class="fixed top-0 w-full bg-white dark:bg-gray-900 z-50">
+        <button id="theme-toggle" class="absolute right-8 top-4 text-2xl text-gray-600 dark:text-gray-300">
+            <i class="fas fa-moon"></i>
+        </button>
+        <div class="relative mt-4">
+            <input type="text" id="search" placeholder="Search..." 
+                class="w-96 px-4 py-2 rounded-full bg-gray-100 focus:outline-none" 
+                onkeyup="showSuggestions()">
+            <div id="suggestions" class="absolute z-10 w-full bg-white dark:bg-gray-800 mt-1 rounded-lg shadow-md hidden">
+                <div class="p-2 hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer">Trending Videos</div>
+                <div class="p-2 hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer">Music Videos</div>
+            </div>
+        </div>
+        <div class="relative ml-4">
+            <img src="https://images.pexels.com/.../profile.jpg" 
+                class="w-8 h-8 rounded-full cursor-pointer" 
+                onclick="toggleProfile()">
+            <div id="profile-dropdown" class="hidden absolute right-0 mt-2 w-48 bg-white dark:bg-gray-800 rounded shadow-lg py-2">
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">My Channel</a>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">History</a>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">Sign Out</a>
+            </div>
+        </div>
+    </header>
+
+    <aside class="fixed top-0 left-0 h-screen w-16 md:w-64 transition-width duration-300 bg-white dark:bg-gray-900">
+        <button onclick="toggleMenu()" class="md:hidden px-4 py-2 text-gray-600 dark:text-gray-300">
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="flex flex-col mt-8 space-y-4 px-4">
+            <a href="#" class="flex items-center p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">
+                <i class="fas fa-home text-2xl"></i>
+                <span class="ml-2 hidden md:block">Home</span>
+            </a>
+            <!-- Repeat for Explore, Shorts, etc. -->
+        </div>
+    </aside>
+
+    <main class="mt-20 px-4">
+        <h2 class="text-2xl font-semibold mb-4">Trending Now</h2>
+        <div class="overflow-x-auto whitespace-nowrap -mx-2">
+            <div class="inline-block mr-4">
+                <img src="https://images.pexels.com/.../trending1.jpg" 
+                    class="w-64 h-36 object-cover rounded-lg mb-2">
+                <div class="text-gray-700 dark:text-gray-300">Trending Video Title</div>
+            </div>
+            <!-- Repeat for 6 items -->
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-8">
+            <div class="group relative overflow-hidden">
+                <img src="https://images.pexels.com/.../video1.jpg" 
+                    class="w-full h-64 object-cover transition duration-300 group-hover:scale-105">
+                <div class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition">
+                    <i class="fas fa-play text-6xl text-white mx-auto mt-8"></i>
+                </div>
+                <div class="mt-2 text-gray-700 dark:text-gray-300">Video Title</div>
+            </div>
+            <!-- Repeat for 12 items -->
+        </div>
+    </main>
+
+    <footer class="bg-gray-100 dark:bg-gray-800 py-8 mt-20">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-wrap justify-center text-gray-600 dark:text-gray-300 text-sm">
+                <div class="mr-8">
+                    <i class="fas fa-globe mr-2"></i> About
+                </div>
+                <div class="mr-8">
+                    <i class="fas fa-newspaper mr-2"></i> Press
+                </div>
+                <!-- Repeat for other links -->
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
